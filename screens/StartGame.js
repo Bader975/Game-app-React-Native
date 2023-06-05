@@ -5,20 +5,31 @@ import MainButton from "../components/MainButton";
 export default function StartGame() {
   return (
     <View style={styles.inputContainer}>
-      <TextInput placeholder="enter number" />
-      <MainButton>Rest</MainButton>
-      <MainButton>Confirm</MainButton>
+      <TextInput
+        style={styles.numberInput}
+        maxLength={2}
+        keyboardType="number-pad"
+        autoCapitalize="none"
+        autoCorrect={false}
+      />
+      <View style={styles.buttonConatainer}>
+        <View style={{ flex: 1 }}>
+          <MainButton>Rest</MainButton>
+        </View>
+        <View style={{ flex: 1 }}>
+          <MainButton>Confirm</MainButton>
+        </View>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   inputContainer: {
-    // flex: 1,
-    // justifyContent: "center",
-    // alignItems: "center",
+    justifyContent: "center",
+    alignItems: "center",
     marginTop: 100,
-    marginHorizontal: 16,
+    marginHorizontal: 25,
     borderRadius: 8,
     padding: 16,
     backgroundColor: "#72063c",
@@ -34,11 +45,21 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
   },
 
-numberInput: {
+  numberInput: {
+    height: 50,
+    width: 80,
     fontSize: 30,
     fontWeight: "bold",
-    height:40,
-    color: "white",
-    borderBottomColor:'#ddb52f'
+    textAlign: "center",
+    color: "#ddb52f",
+    borderBottomColor: "#ddb52f",
+    borderBottomWidth: 2,
+    marginVertical: 15,
+  },
+
+  buttonConatainer: {
+    flexDirection: "row",
+    // justifyContent:'space-evenly',
+    alignItems: "stretch",
   },
 });
